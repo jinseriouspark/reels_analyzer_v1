@@ -24,3 +24,4 @@ pandas>=2.2.3,<2.4         # 3.13 지원
 
 # Utils
 python-dotenv>=1.0.0
+pytesseract
