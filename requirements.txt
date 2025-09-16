@@ -1,19 +1,26 @@
- 
-streamlit==1.28.1
+# 🎬 Reels Analyzer - requirements (Python 3.13 호환)
 
- 
-google-generativeai==0.3.2
-openai==1.3.7
+# Core
+streamlit>=1.28,<1.50
 
- 
-opencv-python-headless==4.8.1.78
-pillow==10.1.0
-imageio-ffmpeg==0.4.9
-faster-whisper==1.0.3
+# Model SDKs
+google-generativeai>=0.3.2
+openai>=1.3.7
+requests>=2.31.0          # Gemini REST 폴백용
 
- 
-pandas==2.1.4
-numpy==1.26.4
+# Video/Image
+opencv-python-headless>=4.8.1.78
+pillow>=11.2.0,<12.0      # ← 3.13 호환 버전으로 업
+imageio-ffmpeg>=0.4.9     # ffmpeg 실행기
+# ffmpeg-python  (선택: subprocess로 충분하면 빼도 됨)
 
-streamlit-option-menu==0.3.6
-streamlit-lottie==0.0.5
+# Audio/ASR
+faster-whisper>=1.0.0     # CTranslate2 포함(바이너리 휠)
+# pytesseract               # OCR 안 쓰면 삭제
+
+# Data
+numpy>=2.1.1,<2.3          # 3.13에서 안정 권장
+pandas>=2.2.3,<2.4         # 3.13 지원
+
+# Utils
+python-dotenv>=1.0.0
